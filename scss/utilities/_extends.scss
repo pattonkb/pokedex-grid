@@ -1,0 +1,48 @@
+%alert-styles {
+    border: 1px solid $poke-black;
+    border-radius: $border-round;
+    height: 1rem;
+    width: 1rem;
+}
+
+%button-shadow-poke-red {
+    box-shadow: -3px -3px 5px 0px $poke-red inset;
+}
+
+%button-shadow-pokedex-red {
+    box-shadow: -3px -3px 5px 0px $pokedex-red inset;
+}
+
+%button-shadow-poke-orange {
+    box-shadow: -3px -3px 5px 0px orange inset;
+}
+
+%button-shadow-poke-green {
+    box-shadow: -3px -3px 5px 0px darkgreen inset;
+}
+
+%button-shadow-poke-grey {
+    box-shadow: -3px -3px 5px 0px grey inset;
+}
+
+%button-shadow-poke-black {
+    box-shadow: -3px -3px 5px 0px black inset;
+}
+
+%button-shadow-poke-blue {
+    box-shadow: -3px -3px 5px 0px grey inset;
+}
+
+
+%screen-shadow-poke-grey {
+    box-shadow: 0px 0px 5px 3px grey inset;
+}
+%screen-shadow-poke-black {
+    box-shadow: 0px 0px 5px 3px black inset;
+}
+%screen-shadow-poke-green {
+    box-shadow: 0px 0px 5px 3px darkgreen inset;
+}
+%screen-shadow-poke-red {
+    box-shadow: 0px 0px 5px 3px $poke-red inset;
+}

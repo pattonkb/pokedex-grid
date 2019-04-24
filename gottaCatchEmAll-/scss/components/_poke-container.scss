@@ -1,0 +1,133 @@
+.poke-container {
+    border-radius: $border-default;
+    margin: .5rem 0;
+    padding: 1rem 0;
+    // text-align: center;
+    @include flexbox($justify: space-between, $wrap: wrap);
+    &--general-info {
+        background-color: $poke-black;
+        @extend %screen-shadow-poke-black;
+    }
+    @include media("medium") {
+        max-width: 460px;
+    }
+    &--decorative {
+        @include media("medium") {
+
+        }
+    }
+}
+
+.poke-container__item {
+    border-radius: $border-default;
+    padding: .5rem;
+    &--enter {
+        height: 2.5rem;
+        width: 2.5rem;
+        background-color: $poke-black;
+        border: 1px solid $poke-black;
+        border-radius: $border-round;
+        @extend %button-shadow-poke-black;
+    }
+    &--start-select-container {
+        width: 80%;
+        justify-content: flex-start;
+    }
+    &--start,
+    &--select {
+        height: 1rem;
+        width: 4rem;
+        background-color: $poke-grey;
+        border-radius: $border-default;
+        @extend %button-shadow-poke-grey;
+    }
+    &--dots {
+        font-size: 2rem;
+        color: $poke-black;
+    }
+    &--dots:last-of-type {
+        width: 100%;
+        text-align: right;
+    }
+    &--description-short {
+        border: 1px solid $poke-black;
+        width: 40%;
+        background-color: $poke-green;
+        @extend %screen-shadow-poke-green;
+    }
+    &--directionals {
+        display: flex;
+        flex-wrap: wrap;
+        position: relative;
+        width: 5rem;
+        height: 5rem;
+    }
+    &--directionals button,
+    &--directionals .filler {
+        border-color: transparent;
+        background-color: $poke-black;
+        @extend %button-shadow-poke-black;
+    }
+    &--number-name {
+        width: 100%;
+        // text-align: center;
+    }
+    &--height,
+    &--weight {
+        width: 45%;
+    }
+    &--poke-type-1,
+    &--poke-type-2 {
+        background-color: $poke-black;
+        padding: 1rem;
+        width: 30%;
+        text-align: center;
+        @extend %screen-shadow-poke-black;
+    }
+
+
+    //decorative section
+
+    &--decorative-buttons {
+        width: 100%;
+    }
+    &--decorative-button {
+        width: 20%;
+        height: 4rem;
+        background-color: $poke-blue;
+        @extend %button-shadow-poke-grey;
+        border: 1px solid $poke-grey;
+        border-radius: $border-default;
+    }
+    &--decorative-1,
+    &--decorative-2 {
+        height: 1rem;
+        width: 4rem;
+        margin-right: 1rem;
+        background-color: $poke-grey;
+        border-radius: $border-default;
+        @extend %button-shadow-poke-grey;
+    }
+    &--decorative-3-4 {
+        @include media("medium") {
+            width: 50%;
+        }
+    }
+    &--decorative-3,
+    &--decorative-4 {
+        height: 4rem;
+        width: 4rem;
+        background-color: $poke-grey;;
+        @extend %button-shadow-poke-grey;
+        border-radius: $border-default;
+    }
+
+    &--decorative-circle-button {
+        height: 4rem;
+        width: 4rem;
+        background-color: $poke-yellow;
+        border: 1px solid $poke-grey;
+        border-radius: $border-round;
+        @extend %button-shadow-poke-orange;
+    }
+}

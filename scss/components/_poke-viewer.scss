@@ -1,0 +1,64 @@
+
+// .poke-viewer {
+//     // @include flexbox($direction: row, $wrap: wrap, $justify: space-around);
+//     border-radius: $border-default;
+//     border-color: transparent;
+// 	background: linear-gradient(45deg,  transparent 20px, $poke-grey 0) bottom left;
+// 	background-repeat: no-repeat;
+//     margin: 1rem auto;
+//     width: 100%;
+//     @extend %button-shadow-poke-grey;
+//     &__item--dots {
+//         text-align: center;
+//         font-size: 2rem;
+//         color: $poke-black;
+//         width: 100%;
+//     }
+//
+//     &__item--poke-image-container {
+//         width: 100%;
+//         height: 10rem;
+//         border-radius: $border-default;
+//         text-align: center;
+//         background-color: $white;
+//         margin: 0 1rem;
+//         padding: .5rem;
+//         @extend %screen-shadow-poke-grey;
+//     }
+//     &__item--poke-image {
+//         margin: 1rem;
+//     }
+//     &__item--poke-speak {
+//         text-align: right;
+//         background-color: $pokedex-red;
+//         height: 2rem;
+//         width: 2rem;
+//         border-radius: $border-round;
+//         margin: 1rem;
+//         @extend %button-shadow-poke-red;
+//     }
+//     &__item--poke-vent {
+//         color: $poke-black;
+//         font-size: 3rem;
+//         font-weight: 100;
+//     }
+// }
+
+
+// .poke-viewer {
+//     // display: grid;
+//     // grid-template-rows: auto 1fr auto auto;
+//     // border-radius: $border-default;
+//     // border-color: transparent;
+// 	// background: linear-gradient(45deg,  transparent 20px, $poke-grey 0) bottom left;
+// 	// background-repeat: no-repeat;
+//     &__item--poke-image-container {
+//         // height: 10rem;
+//         // border-radius: $border-default;
+//         // text-align: center;
+//         // background-color: $white;
+//         // margin: 0 1rem;
+//         // padding: .5rem;
+//         // @extend %screen-shadow-poke-grey;
+//     }
+// }

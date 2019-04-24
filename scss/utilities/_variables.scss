@@ -1,0 +1,46 @@
+// Descriptive base colors
+$white      : #fff;
+$black      : #000;
+$grey-black: #2e2222;
+$nintendo-brick-grey: #d8dbd0;
+$cream-red: #ee2244;
+$neon-blue: #44aacc;
+$warm-yellow: #f48333;
+$forrest-green: #26441f;
+$warm-red: #931123;
+
+// Other colors
+$pokedex-red: $cream-red;
+$poke-black: $grey-black;
+$poke-grey: $nintendo-brick-grey;
+$poke-blue: $neon-blue;
+$poke-yellow: $warm-yellow;
+$poke-green: $forrest-green;
+$poke-red: $warm-red;
+
+
+// Text
+$base__font-size    : 1rem;
+$base__line-height  : 1.5;
+$letter-spacing     : .0625rem;
+
+
+// Font stacks
+$font-url--google       : "https://fonts.googleapis.com/css?family=IBM+Plex+Mono:300,400";
+$font-family--primary   : "IBM Plex Mono", monospace, Helvetica, sans-serif;
+
+// Font weights
+$font-weight--thin       : 100;
+$font-weight--light      : 300;
+$font-weight--medium     : 400;
+$font-weight--bold       : 700;
+$font-weight--ultra-bold : 900;
+
+
+// Breakpoints
+$breakpoint-medium  : 460px;
+$breakpoint-large   : 1000px;
+
+// Border-radius
+$border-round    : 50%;
+$border-default  : .5rem;
