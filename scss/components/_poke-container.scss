@@ -1,6 +1,4 @@
 .wrapper {
-    margin: 1rem;
-    border: 1px solid $poke-black;
     display: grid;
     grid-template: 1fr auto 1fr / 1fr;
     grid-template-areas:
@@ -8,17 +6,60 @@
         "pokeHinge"
         "pokeWrapper2"
     ;
+    margin: 1rem auto;
+    padding: 1rem;
+    max-width: 30rem;
     @include media("medium") {
         grid-template: 1fr / 1fr auto 1fr;
         grid-template-areas:
             "pokeWrapper1 pokeHinge pokeWrapper2"
         ;
-        // max-width: 100rem;
+        max-width: 60rem;
     }
     @include media("large") {
-        max-width: 60rem;
-        margin: 1rem auto;
+
     }
+}
+.wrapper-decorations-1 {
+  grid-area: decorative1;
+  display: flex;
+  height: 4rem;
+  &--1 {
+    width: 50%;
+    height: 60%;
+    align-self: flex-end;
+    border-top: 1px solid $poke-red;
+    background-color: $poke-red;
+  }
+  &--2 {
+    // width: 50%;
+    // height: 100%;
+    // background: linear-gradient(150deg,  transparent 20px, $poke-red 0);
+     width: 50%;
+     height: 100%;
+     border-top: 10px solid $poke-red;
+     border-right: 10px solid transparent;
+  }
+
+}
+
+.wrapper-decorations-2 {
+  grid-area: decorative2;
+  display: flex;
+  height: 4rem;
+  &--3 {
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(deg,  transparent 20px, $poke-red 0);
+
+  }
+  &--4 {
+    width: 50%;
+    height: 60%;
+    align-self: flex-end;
+    border-top: 1px solid $poke-red;
+    background-color: $poke-red;
+  }
 }
 
 .pokedex-wrapper__one,
@@ -37,10 +78,11 @@
 .pokedex-wrapper__one {
     grid-area: pokeWrapper1;
     display: grid;
-    grid-gap: 1rem 0;
-    grid-template: auto 1fr auto / 1fr;
+    // grid-gap: 1rem 0;
+    grid-template: auto auto 1fr auto / 1fr;
     grid-template-areas:
         "pokeAlerts"
+        "decorative1"
         "pokeViewer"
         "pokeControls"
     ;
@@ -95,9 +137,10 @@
     ;
     border-radius: $border-default;
     border-color: transparent;
-	background: linear-gradient(45deg,  transparent 20px, $poke-grey 0) bottom left;
-	background-repeat: no-repeat;
+	  background: linear-gradient(45deg,  transparent 20px, $poke-grey 0) bottom left;
+	  background-repeat: no-repeat;
     padding: 1rem 2rem;
+    margin: 1rem 0;
     @extend %button-shadow-poke-grey;
     &__item--dots {
         grid-area: pokeVdots;
@@ -261,7 +304,8 @@
     }
     @include media("medium") {
         width: 1.15rem;
-        height: 100%;
+        height: auto;
+        // margin-top: 5rem;
         grid-template: repeat(2, auto) / auto;
     }
 }
@@ -270,8 +314,9 @@
     grid-area: pokeWrapper2;
     display: grid;
     grid-gap: 2rem 0;
-    grid-template: auto 1fr auto / 1fr;
+    grid-template: auto auto 1fr auto / 1fr;
     grid-template-areas:
+        "decorative2"
         "generalInfo"
         "pokeButtons"
         "pokeType"
@@ -318,7 +363,7 @@
     grid-template: 2fr auto 1fr / repeat(3, auto);
     grid-template-areas:
         "keyboard keyboard keyboard"
-        "pokeDots4  decorativeStartSelect decorativeStartSelect"
+        "pokeDots4  . decorativeStartSelect"
         "decorativeAB decorativeAB pokeDecorativeCircle"
     ;
     &--keyboard {
@@ -352,7 +397,6 @@
             border-radius: $border-default;
         }
     }
-
     &--decorative-start-select {
         grid-area: decorativeStartSelect;
     }
@@ -409,6 +453,7 @@
     &-1,
     &-2 {
         background-color: $poke-black;
+        border-radius: $border-default;
         padding: 1rem;
         width: 30%;
         text-align: center;
