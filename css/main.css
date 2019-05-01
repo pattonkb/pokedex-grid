@@ -153,43 +153,6 @@ p {
     max-width: 60rem;
   }
 }
-.wrapper-decorations-1 {
-  grid-area: decorative1;
-  display: flex;
-  height: 4rem;
-}
-.wrapper-decorations-1--1 {
-  width: 50%;
-  height: 60%;
-  align-self: flex-end;
-  border-top: 1px solid #931123;
-  background-color: #931123;
-}
-.wrapper-decorations-1--2 {
-  width: 50%;
-  height: 100%;
-  border-top: 10px solid #931123;
-  border-right: 10px solid transparent;
-}
-
-.wrapper-decorations-2 {
-  grid-area: decorative2;
-  display: flex;
-  height: 4rem;
-}
-.wrapper-decorations-2--3 {
-  width: 50%;
-  height: 100%;
-  background: linear-gradient(deg, transparent 20px, #931123 0);
-}
-.wrapper-decorations-2--4 {
-  width: 50%;
-  height: 60%;
-  align-self: flex-end;
-  border-top: 1px solid #931123;
-  background-color: #931123;
-}
-
 .pokedex-wrapper__one,
 .pokedex-wrapper__two {
   background-color: #ee2244;
@@ -200,8 +163,8 @@ p {
 .pokedex-wrapper__one {
   grid-area: pokeWrapper1;
   display: grid;
-  grid-template: auto auto 1fr auto/1fr;
-  grid-template-areas: "pokeAlerts" "decorative1" "pokeViewer" "pokeControls";
+  grid-template: auto 1fr auto/1fr;
+  grid-template-areas: "pokeAlerts" "pokeViewer" "pokeControls";
 }
 
 .pokedex-alerts {
@@ -388,6 +351,7 @@ p {
   .pokedex-hinge {
     width: 1.15rem;
     height: auto;
+    margin-top: 6rem;
     grid-template: repeat(2, auto)/auto;
   }
 }
@@ -396,9 +360,15 @@ p {
   grid-area: pokeWrapper2;
   display: grid;
   grid-gap: 2rem 0;
-  grid-template: auto auto 1fr auto/1fr;
-  grid-template-areas: "decorative2" "generalInfo" "pokeButtons" "pokeType";
+  grid-template: auto 1fr auto/1fr;
+  grid-template-areas: "generalInfo" "pokeButtons" "pokeType";
 }
+@media (min-width: 750px) {
+  .pokedex-wrapper__two {
+    margin-top: 6rem;
+  }
+}
+
 .poke__general-info {
   grid-area: generalInfo;
   padding: 1rem;
@@ -428,7 +398,7 @@ p {
   grid-area: pokeButtons;
   display: grid;
   grid-gap: 1rem 0;
-  grid-template: 2fr auto 1fr/repeat(3, auto);
+  grid-template-columns: repeat(3, auto);
   grid-template-areas: "keyboard keyboard keyboard" "pokeDots4  . decorativeStartSelect" "decorativeAB decorativeAB pokeDecorativeCircle";
 }
 .poke__buttons--keyboard {
@@ -483,7 +453,6 @@ p {
 .poke__buttons--decorative-start, .poke__buttons--decorative-select {
   height: 1rem;
   width: 4rem;
-  margin-right: 1rem;
   background-color: #d8dbd0;
   border-radius: 0.5rem;
 }
