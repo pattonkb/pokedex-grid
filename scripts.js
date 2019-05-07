@@ -49,3 +49,19 @@
 //     .catch(function (error) {
 //       console.log(error);
 //     })
+
+var synth = window.speechSynthesis;
+var pokedexAlertsAlert = document.querySelector(".pokedex-alerts--alert");
+var textToSpeak = document.querySelector(".poke__general-info").textContent;
+var utterThis = new SpeechSynthesisUtterance(textToSpeak);
+var speakButton = document.querySelector(".poke-viewer__item--poke-speak");
+
+speakButton.addEventListener("click", function() {
+    synth.speak(utterThis);
+    if (speechSynthesis.speaking) {
+        pokedexAlertsAlert.classList.add("speaking");
+    } else {
+        pokedexAlertsAlert.classList.remove("speaking");
+    }
+
+});
