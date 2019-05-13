@@ -15,10 +15,11 @@
             <div class="pokedex-alerts--caution"></div>
             <div class="pokedex-alerts--safe"></div>
         </div>
+        <div class="poke-inset">
         <div class="poke-viewer">
             <div class="poke-viewer__item--dots">&sdot;&sdot;</div>
             <div class="poke-viewer__item--poke-image-container">
-                <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/7.png" class="poke-viewer__item--poke-image"/>
+                <img src="" class="poke-viewer__item--poke-image"/>
             </div>
             <button type="submit" class="poke-viewer__item--poke-speak"></button>
             <div class="poke-viewer__item--poke-vent">&equiv;</div>
@@ -31,7 +32,7 @@
             </div>
             <div class="poke-controls__item poke-controls__item--dots">&sdot;&sdot;</div>
             <div class="poke-controls__item poke-controls__item--description-short">
-                <p>tiny turtle pok&eacute;mon</p>
+                <!-- <p>tiny turtle pok&eacute;mon</p> -->
             </div>
             <div class="poke-controls__item poke-controls__item--directionals">
                 <button class="up"></button>
@@ -42,6 +43,8 @@
             </div>
             <div class="poke-controls__item--dots">&sdot;&sdot;</div>
         </div>
+      </div>
+
     </div>
     <div class="pokedex-hinge">
       <div class="pokedex-hinge__item"></div>
@@ -49,20 +52,20 @@
     </div>
     <div class="pokedex-wrapper__two">
         <div class="poke__general-info">
-            <div class="poke__general-info--number-name">
-                <p><img src="http://www.pokeapi-how.appspot.com/favicon.ico" class="poke-ball"/> #007 squirtle</p>
+            <!-- <div class="poke__general-info--number-name">
+                <p><img src="http://www.pokeapi-how.appspot.com/favicon.ico" class="poke-ball"/>  #<span class="number"></span>  <span class="name"></span></p>
             </div>
             <div class="poke__general-info--height">
                 <p>height:</p>
-                <p>1'08"</p>
+                <p class="height"></p>
             </div>
             <div class="poke__general-info--weight">
                 <p>weight:</p>
-                <p>19.8 lbs.</p>
+                <p class="weight"> lbs</p>
             </div>
             <div class="poke__general-info--poke-description">
-                <p>Squirtle. This Tiny Turtle Pokémon draws its long neck into its shell to launch incredible water attacks with amazing range and accuracy. The blasts can be quite powerful.</p>
-            </div>
+                <p class="description"><span class="desc-name"></span> is a <span class="type-1"></span> Pok&acute;mon. Its main attacks are <span class="attack-1"></span> and <span class="attack-2"></span>.</p>
+            </div> -->
         </div>
         <div class="poke__buttons">
             <div class="poke__buttons--keyboard">
@@ -82,15 +85,15 @@
             </div>
         </div>
         <div class="poke__type">
-            <div class="poke__type-1">
-                <p>water</p>
-            </div>
-            <div class="poke__type-2">
-                <p>null</p>
-            </div>
+            <div class="poke__type-1"></div>
+            <div class="poke__type-2"></div>
         </div>
     </div>
 </div>
+<script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 <script src="scripts.js"></script>
 </body>
