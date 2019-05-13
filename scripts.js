@@ -24,6 +24,13 @@ function getRandomPokemon() {
   // });
 }
 
+function capitalizeFirst(word) {
+  var firstLetter = word.charAt(0);
+  var uppercaseFirstLetter = word.charAt(0).toUpperCase();
+  var stringWithoutFirstLetter = word.slice(1)
+  return word.charAt(0).toUpperCase() + word.slice(1);
+}
+
 const pokeGenInfo = document.querySelector(".poke__general-info");
 const pokeImage = document.querySelector(".poke-viewer__item--poke-image");
 const getRandomizedPokemon = document.querySelector(".poke-controls__item--enter");
@@ -39,7 +46,7 @@ getRandomizedPokemon.addEventListener("click", function() {
               const pokeResponse = JSON.parse(pokeRequest.responseText);
               console.log(pokeResponse);
               pokeImage.src = pokeResponse.sprites.front_default;
-              let pokeName = pokeResponse.name;
+              let pokeName = capitalizeFirst(pokeResponse.name);
               pokeDescShort.innerHTML = `<p>${pokeName}</p>`;
               let pokeNumberName = `#${pokeResponse.id} ${pokeResponse.name}`;
               let pokeHeight = `${Math.ceil(pokeResponse.height/3.048)}'`;
