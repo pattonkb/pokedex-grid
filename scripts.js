@@ -67,7 +67,7 @@ getRandomizedPokemon.addEventListener("click", function() {
 
               let genInfoHTML =
                   `<div class="poke__general-info--number-name">
-                        <p><img src="http://www.pokeapi-how.appspot.com/favicon.ico" class="poke-ball"/> ${pokeNumber} ${pokeName}</p>
+                        <p><img src="http://www.pokeapi-how.appspot.com/favicon.ico" class="poke-ball"/> #${pokeNumber} ${pokeName}</p>
                     </div>
                     <div class="poke__general-info--height">
                         <p>height:</p>
