@@ -40,56 +40,55 @@ const speakButton = document.querySelector(".poke-viewer__item--poke-speak");
 
 getRandomizedPokemon.addEventListener("click", function() {
   const pokeRequest = new XMLHttpRequest();
-      pokeRequest.onreadystatechange = function () {
-          if (pokeRequest.readyState === 4 && pokeRequest.status === 200) {
-              const pokeResponse = JSON.parse(pokeRequest.responseText);
-              console.log(pokeResponse);
-              pokeImage.src = pokeResponse.sprites.front_default;
-              let pokeName = capitalizeFirst(pokeResponse.name);
-              let pokeNumber = pokeResponse.id;
-              let pokeHeight = `${Math.ceil(pokeResponse.height/3.048)}'`;
-              let pokeWeight = `${Math.ceil(pokeResponse.weight/4.5359237)} lbs.`;
-              let attack1 = pokeResponse.moves[0].move.name;
-              let attack2 = pokeResponse.moves[1].move.name;
-              let pokeType1 = pokeResponse.types[0].type.name;
-              let pokeType2 = "";
-              let type1 = document.querySelector(".poke__type-1");
-              let type2 = document.querySelector(".poke__type-2");
+  pokeRequest.onreadystatechange = function () {
+      if (pokeRequest.readyState === 4 && pokeRequest.status === 200) {
+          const pokeResponse = JSON.parse(pokeRequest.responseText);
+          console.log(pokeResponse);
+          pokeImage.src = pokeResponse.sprites.front_default;
+          let pokeName = capitalizeFirst(pokeResponse.name);
+          let pokeNumber = pokeResponse.id;
+          let pokeHeight = `${Math.ceil(pokeResponse.height/3.048)}'`;
+          let pokeWeight = `${Math.ceil(pokeResponse.weight/4.5359237)} lbs.`;
+          let attack1 = pokeResponse.moves[0].move.name;
+          let attack2 = pokeResponse.moves[1].move.name;
+          let pokeType1 = pokeResponse.types[0].type.name;
+          let pokeType2 = "";
+          let type1 = document.querySelector(".poke__type-1");
+          let type2 = document.querySelector(".poke__type-2");
 
-              function getType2() {
-                pokeResponse.types.length > 1 ?
-                  pokeType2 = pokeResponse.types[1].type.name
-                  :
-                  pokeType2 = "null"
-              }
-              getType2();
-              pokeDescShort.innerHTML = `<p>${pokeName}</p>`;
-
-              let genInfoHTML =
-                  `<div class="poke__general-info--number-name">
-                        <p><img src="http://www.pokeapi-how.appspot.com/favicon.ico" class="poke-ball"/> #${pokeNumber} ${pokeName}</p>
-                    </div>
-                    <div class="poke__general-info--height">
-                        <p>height:</p>
-                        <p>${pokeHeight}</p>
-                    </div>
-                    <div class="poke__general-info--weight">
-                        <p>weight:</p>
-                        <p>${pokeWeight}</p>
-                    </div>
-                    <div class="poke__general-info--poke-description">
-                        <p>${pokeName} is a ${pokeType1} type Pok&eacute;mon. A few of it's attacks are ${attack1} and ${attack2}.</p>
-                    </div>`
-                ;
-                pokeGenInfo.innerHTML = genInfoHTML;
-                type1.textContent =  pokeType1;
-                type2.textContent = pokeType2;
-
+          function getType2() {
+            pokeResponse.types.length > 1 ?
+              pokeType2 = pokeResponse.types[1].type.name
+              :
+              pokeType2 = "null"
           }
-      };
-      pokeRequest.open("GET","http://pokeapi.co/api/v2/pokemon/" + getRandomPokemon());
-      pokeRequest.send();
+          getType2();
+          pokeDescShort.innerHTML = `<p>${pokeName}</p>`;
 
+          let genInfoHTML =
+              `<div class="poke__general-info--number-name">
+                    <p><img src="http://www.pokeapi-how.appspot.com/favicon.ico" class="poke-ball"/> #${pokeNumber} ${pokeName}</p>
+                </div>
+                <div class="poke__general-info--height">
+                    <p>height:</p>
+                    <p>${pokeHeight}</p>
+                </div>
+                <div class="poke__general-info--weight">
+                    <p>weight:</p>
+                    <p>${pokeWeight}</p>
+                </div>
+                <div class="poke__general-info--poke-description">
+                    <p>${pokeName} is a ${pokeType1} type Pok&eacute;mon. A few of it's attacks are ${attack1} and ${attack2}.</p>
+                </div>`
+            ;
+            pokeGenInfo.innerHTML = genInfoHTML;
+            type1.textContent =  pokeType1;
+            type2.textContent = pokeType2;
+
+      }
+  };
+  pokeRequest.open("GET","http://pokeapi.co/api/v2/pokemon/" + getRandomPokemon());
+  pokeRequest.send();
 });
 
 speakButton.addEventListener("click", function(e) {
