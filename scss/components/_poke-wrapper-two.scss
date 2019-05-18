@@ -1,0 +1,148 @@
+.pokedex-wrapper__two {
+    grid-area: pokeWrapper2;
+    display: grid;
+    grid-gap: 2rem 0;
+    grid-template: .75fr 1fr auto / 1fr;
+    grid-template-areas:
+        "generalInfo"
+        "pokeButtons"
+        "pokeType"
+    ;
+    @include media("medium") {
+        margin: 6.5rem 0 1.5rem;
+    }
+}
+
+.poke__general-info {
+    grid-area: generalInfo;
+    padding: 1rem;
+    display: grid;
+    grid-template: repeat(3, auto) / repeat(2, auto);
+    grid-template-areas:
+        "numberName numberName"
+        "height weight"
+        "description description"
+    ;
+    justify-items: center;
+    border-radius: $border-default;
+    background-color: $poke-black;
+    @extend %screen-shadow-poke-black;
+    color: $white;
+    &--number-name {
+        grid-area: numberName;
+    }
+    &--height {
+        grid-area: height;
+    }
+    &--weight {
+        grid-area: weight;
+    }
+    &--poke-description {
+        grid-area: description;
+    }
+}
+
+.poke__buttons {
+    grid-area: pokeButtons;
+    display: grid;
+    grid-gap: 1rem 0;
+    grid-template-columns: repeat(3, auto);
+    // grid-template: 2fr auto 1fr / repeat(3, auto);
+    grid-template-areas:
+        "keyboard keyboard keyboard"
+        "pokeDots4  . decorativeStartSelect"
+        "decorativeAB decorativeAB pokeDecorativeCircle"
+    ;
+    &--keyboard {
+        grid-area: keyboard;
+        display: grid;
+        grid-gap: 0;
+        justify-items: center;
+        grid-template: repeat(2, 1fr) / repeat(5, auto);
+        grid-template-areas:
+            "a b c d e"
+            "f g h i j"
+        ;
+        &-key.a{grid-area: a};
+        &-key.b{grid-area: b};
+        &-key.c{grid-area: c};
+        &-key.d{grid-area: d};
+        &-key.e{grid-area: e};
+        &-key.f{grid-area: f};
+        &-key.g{grid-area: g};
+        &-key.h{grid-area: h};
+        &-key.i{grid-area: i};
+        &-key.j{grid-area: j};
+
+        &-key {
+            grid-area: key;
+            width: 100%;
+            height: 4rem;
+            background-color: $poke-blue;
+            @extend %button-shadow-poke-grey;
+            border: 1px solid $poke-grey;
+            border-radius: $border-default;
+        }
+    }
+    &--decorative-start-select {
+        grid-area: decorativeStartSelect;
+    }
+
+    &--decorative-start,
+    &--decorative-select {
+        height: 1rem;
+        width: 4rem;
+        background-color: $poke-grey;
+        border-radius: $border-default;
+        @extend %button-shadow-poke-grey;
+    }
+
+    &--dots {
+        grid-area: pokeDots4;
+        font-size: 2rem;
+    }
+
+    &--decorative-a-b {
+        grid-area: decorativeAB;
+    }
+
+    &--decorative-a,
+    &--decorative-b {
+        height: 4rem;
+        width: 4rem;
+        background-color: $poke-grey;
+        @extend %button-shadow-poke-grey;
+        border-radius: $border-default;
+    }
+
+    &--decorative-circle {
+        grid-area: pokeDecorativeCircle;
+        place-self: center;
+        &-button {
+            place-self: right;
+            height: 4rem;
+            width: 4rem;
+            background-color: $poke-yellow;
+            border: 1px solid $poke-grey;
+            border-radius: $border-round;
+            @extend %button-shadow-poke-orange;
+        }
+    }
+}
+
+.poke__type {
+    grid-area: pokeType;
+    display: flex;
+    justify-content: space-between;
+    color: $white;
+    &-1,
+    &-2 {
+        background-color: $poke-black;
+        border-radius: $border-default;
+        padding: 1rem;
+        width: 30%;
+        height: 1rem;
+        text-align: center;
+        @extend %screen-shadow-poke-black;
+    }
+}

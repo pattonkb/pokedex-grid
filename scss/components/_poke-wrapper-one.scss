@@ -1,0 +1,254 @@
+.pokedex-wrapper__one {
+    grid-area: pokeWrapper1;
+    display: grid;
+    grid-template: auto 1fr auto / 1fr;
+    grid-template-areas:
+        "pokeAlerts"
+        "pokeInset"
+        "pokeInset"
+    ;
+}
+
+.poke-inset {
+  grid-area: pokeInset;
+  display: grid;
+  grid-template: 1fr auto / 1fr;
+  grid-template-areas:
+  "pokeViewer"
+  "pokeControls"
+  ;
+  @include media("medium") {
+    margin: 1rem 0;
+    padding: .5rem;
+    border-radius: $border-default;
+    box-shadow: inset 3px 7px 25px -5px $poke-black;
+  }
+}
+
+.pokedex-alerts {
+    grid-area: pokeAlerts;
+    display: grid;
+    grid-gap: 0 1rem;
+    grid-template-areas:
+        "alert warn caution safe ."
+    ;
+    align-items: start;
+    justify-content: start;
+    &--alert {
+        grid-area: alert;
+        border-radius: $border-round;
+        border: .25rem solid $poke-grey;
+        background-color: $poke-blue;
+        height: 4rem;
+        width: 4rem;
+        @extend %button-shadow-poke-blue;
+        &.flashing {
+          animation: flash 1s linear infinite;
+          @keyframes flash {
+            0% {
+              background-color: darken($poke-blue, 5%);
+            }
+            // 25% {
+            //   background-color: darken($poke-blue, 10%);
+            // }
+            50% {
+              background-color: darken($poke-blue, 20%);
+            }
+            // 75% {
+            //   background-color: darken($poke-blue, 10%);
+            // }
+            100% {
+              background-color: darken($poke-blue, 5%);
+            }
+          }
+        }
+    }
+    &--warn {
+        grid-area: warn;
+        @extend %alert-styles;
+        background-color: $poke-red;
+        @extend %button-shadow-pokedex-red;
+    }
+    &--caution {
+        grid-area: caution;
+        @extend %alert-styles;
+        background-color: $poke-yellow;
+        @extend %button-shadow-poke-orange;
+    }
+    &--safe {
+        grid-area: safe;
+        @extend %alert-styles;
+        background-color: $poke-green;
+        @extend %button-shadow-poke-green;
+    }
+}
+
+.poke-viewer {
+    grid-area: pokeViewer;
+    display: grid;
+    grid-template: auto 2fr auto / repeat(2, auto);
+    grid-template-areas:
+        "pokeVdots pokeVdots"
+        "pokeImage pokeImage"
+        "pokeSpeak pokeVent"
+    ;
+    border-radius: $border-default;
+    border-color: transparent;
+	  background: linear-gradient(45deg,  transparent 20px, $poke-grey 0) bottom left;
+	  background-repeat: no-repeat;
+    padding: 1rem 2rem;
+    margin: 1rem 0;
+    @extend %button-shadow-poke-grey;
+    &__item--dots {
+        grid-area: pokeVdots;
+        place-self: center;
+        font-size: 2rem;
+    }
+    &__item--poke-image-container {
+        grid-area: pokeImage;
+        border-radius: $border-default;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #eee;
+        padding: 2rem;
+        @extend %screen-shadow-poke-grey;
+    }
+    // &__item--poke-instructions {
+    //
+    // }
+    &__item--poke-image {
+        // height: auto;
+        // width: auto;
+        width: auto;
+        height: 10rem;
+    }
+    &__item--poke-speak {
+        grid-area: pokeSpeak;
+        place-self: center;
+        background-color: $pokedex-red;
+        height: 2rem;
+        width: 2rem;
+        border-radius: $border-round;
+        @extend %button-shadow-poke-red;
+    }
+    &__item--poke-vent {
+        grid-area: pokeVent;
+        place-self: center;
+        font-size: 3rem;
+    }
+}
+
+.poke-controls {
+    gird-area: pokeControls;
+    display: grid;
+    grid-gap: .5rem 1rem;
+    grid-template: auto 1fr auto / 1fr;
+    grid-template-areas:
+        "pokeEnter pokeStartSelect pokeStartSelect"
+        "pokeDots2 pokeDescShort pokeDirectionals"
+        ". . pokeDots3"
+    ;
+    padding: 0 1rem;
+    align-items: center;
+    &__item {
+        &--enter {
+            grid-area: pokeEnter;
+            height: 2.5rem;
+            width: 2.5rem;
+            background-color: $poke-black;
+            border: 1px solid $poke-black;
+            border-radius: $border-round;
+            @extend %button-shadow-poke-black;
+        }
+        &--start-select-container {
+            grid-area: pokeStartSelect;
+        }
+        &--start,
+        &--select {
+            height: 1rem;
+            width: 4rem;
+            background-color: $poke-grey;
+            border-radius: $border-default;
+            @extend %button-shadow-poke-grey;
+        }
+        &--dots {
+            grid-area: pokeDots2;
+            font-size: 2rem;
+            color: $poke-black;
+        }
+        &--dots:last-of-type {
+            grid-area: pokeDots3;
+
+        }
+        &--description-short {
+            grid-area: pokeDescShort;
+            color: $white;
+            text-align: center;
+            padding: 1.75rem 1rem 0 1rem;
+            height: 80%;
+            width: 10rem;
+            border: 1px solid $poke-black;
+            border-radius: $border-default;
+            background-color: $poke-green;
+            @extend %screen-shadow-poke-green;
+        }
+        &--directionals {
+            grid-area: pokeDirectionals;
+            display: flex;
+            flex-wrap: wrap;
+            position: relative;
+            width: 5rem;
+            height: 5rem;
+        }
+        &--directionals button,
+        &--directionals .filler {
+            border-color: transparent;
+            background-color: $poke-black;
+            @extend %button-shadow-poke-black;
+        }
+    }
+    @include media("medium") {
+
+    }
+}
+
+.filler {
+    position: absolute;
+    width: 1.45rem;
+    height: 1.45rem;
+    top: 33.25%;
+    left: 40.75%;
+}
+.right {
+    width: 2rem;
+    height: 1.5rem;
+    position: absolute;
+    top: 33%;
+    left: 64%;
+    border-radius: 0 .5rem .5rem 0;
+}
+.up {
+    width: 1.5rem;
+    height: 2rem;
+    position: absolute;
+    top: 0%;
+    left: 40%;
+    border-radius: .5rem .5rem 0 0;
+}
+.down {
+    width: 1.5rem;
+    height: 2rem;
+    position: absolute;
+    top: 57%;
+    left: 40%;
+    border-radius: 0 0 .5rem .5rem;
+}
+.left {
+    width: 2rem;
+    height: 1.5rem;
+    position: absolute;
+    top: 33%;
+    right: 59%;
+    border-radius: .5rem 0 0 .5rem;
+}

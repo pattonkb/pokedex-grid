@@ -1,0 +1,22 @@
+.pokedex-hinge {
+    grid-area: pokeHinge;
+    display: grid;
+    grid-template: auto / repeat(2, 1fr);
+    background-color: $poke-black;
+    height: 1.15rem;
+    border: 1px solid $poke-black;
+    border-radius: $border-default;
+    // max-width: 27rem;
+    // margin: 0 auto;
+    &__item {
+        background-color: $pokedex-red;
+        border: 1px solid $poke-black;
+        border-radius: $border-default;
+    }
+    @include media("medium") {
+        width: 1.15rem;
+        height: auto;
+        margin: 6.5rem 0 1.5rem;
+        grid-template: repeat(2, auto) / auto;
+    }
+}
