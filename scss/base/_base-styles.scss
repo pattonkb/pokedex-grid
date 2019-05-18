@@ -1,7 +1,15 @@
+@font-face {
+  font-family: 'MyWebFont';
+  src: url('../poke-font/Pokemon-GB.ttf'); /* IE9 Compat Modes */
+}
+
 body {
-    font-family: $font-family--primary;
-    font-weight: 300;
-    color: $poke-black;
+  // font-family: $font-family--primary;
+  font-family: 'MyWebFont';
+  font-weight: 300;
+  color: $poke-black;
+  font-size: .75rem;
+  line-height: 1.5;
 }
 
 h1 {
@@ -42,7 +50,7 @@ a:active {
 }
 
 p {
-  font-size: 1rem;
+  font-size: .75rem;
 }
 
 ol {

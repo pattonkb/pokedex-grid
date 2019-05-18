@@ -27,24 +27,18 @@
     border: 1px solid $poke-black;
     border-radius: $border-default;
     padding: 1rem;
-    // max-width: 25rem;
-    // margin: 0 auto;
     @include media("medium") {
-        // max-width: 80%
     }
 }
 
 .pokedex-wrapper__one {
     grid-area: pokeWrapper1;
     display: grid;
-    // grid-gap: 1rem 0;
     grid-template: auto 1fr auto / 1fr;
     grid-template-areas:
         "pokeAlerts"
         "pokeInset"
         "pokeInset"
-        // "pokeViewer"
-        // "pokeControls"
     ;
 }
 .poke-inset {
@@ -58,7 +52,6 @@
   @include media("medium") {
     margin: 1rem 0;
     padding: .5rem;
-    // border: 1px solid $poke-black;
     border-radius: $border-default;
     box-shadow: inset 3px 7px 25px -5px $poke-black;
   }
@@ -124,7 +117,7 @@
 .poke-viewer {
     grid-area: pokeViewer;
     display: grid;
-    grid-template: auto 1fr auto / repeat(2, auto);
+    grid-template: auto 2fr auto / repeat(2, auto);
     grid-template-areas:
         "pokeVdots pokeVdots"
         "pokeImage pokeImage"
@@ -148,9 +141,13 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        background-color: $white;
+        background-color: #eee;
+        padding: 2rem;
         @extend %screen-shadow-poke-grey;
     }
+    // &__item--poke-instructions {
+    //
+    // }
     &__item--poke-image {
         // height: auto;
         // width: auto;
@@ -219,7 +216,7 @@
             grid-area: pokeDescShort;
             color: $white;
             text-align: center;
-            padding: 1rem;
+            padding: 1.75rem 1rem 0 1rem;
             height: 80%;
             width: 10rem;
             border: 1px solid $poke-black;
@@ -314,7 +311,7 @@
     grid-area: pokeWrapper2;
     display: grid;
     grid-gap: 2rem 0;
-    grid-template: 1fr 1fr auto / 1fr;
+    grid-template: .75fr 1fr auto / 1fr;
     grid-template-areas:
         "generalInfo"
         "pokeButtons"
@@ -329,7 +326,6 @@
     grid-area: generalInfo;
     padding: 1rem;
     display: grid;
-    grid-gap: .25rem 0;
     grid-template: repeat(3, auto) / repeat(2, auto);
     grid-template-areas:
         "numberName numberName"
@@ -455,6 +451,7 @@
         border-radius: $border-default;
         padding: 1rem;
         width: 30%;
+        height: 1rem;
         text-align: center;
         @extend %screen-shadow-poke-black;
     }

@@ -25,10 +25,9 @@ $base__font-size    : 1rem;
 $base__line-height  : 1.5;
 $letter-spacing     : .0625rem;
 
-
 // Font stacks
-$font-url--google       : "https://fonts.googleapis.com/css?family=IBM+Plex+Mono:300,400";
-$font-family--primary   : "IBM Plex Mono", monospace, Helvetica, sans-serif;
+// $font-url--google       : "https://fonts.googleapis.com/css?family=IBM+Plex+Mono:300,400";
+// $font-family--primary   : "IBM Plex Mono", monospace, Helvetica, sans-serif;
 
 // Font weights
 $font-weight--thin       : 100;
@@ -39,7 +38,7 @@ $font-weight--ultra-bold : 900;
 
 
 // Breakpoints
-$breakpoint-medium  : 750px;
+$breakpoint-medium  : 800px;
 $breakpoint-large   : 1000px;
 
 // Border-radius

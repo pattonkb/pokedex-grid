@@ -6,6 +6,7 @@
     <title>Pok&eacute;dex [151]</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1,user-scalable=0">
     <link href="css/main.css" rel="stylesheet">
+    <link src="poke-font/Pokemon-GB.ttf">
 </head>
 <div class="wrapper">
     <div class="pokedex-wrapper__one">
@@ -19,7 +20,9 @@
         <div class="poke-viewer">
             <div class="poke-viewer__item--dots">&sdot;&sdot;</div>
             <div class="poke-viewer__item--poke-image-container">
-                <img src="" class="poke-viewer__item--poke-image"/>
+                <p class="poke-viewer__item--poke-instructions">Welcome to the Pok&eacute;dex! To start, just tap the black circular button to generate a random Pok&eacute;dex. To have me read out this Pok&eacute;mon's data, just tap the red circular button.</p>
+                <!-- <img src="" class="poke-viewer__item--poke-image"/> -->
+
             </div>
             <button type="submit" class="poke-viewer__item--poke-speak"></button>
             <div class="poke-viewer__item--poke-vent">&equiv;</div>
@@ -90,10 +93,12 @@
         </div>
     </div>
 </div>
+<!-- <div><a href="https://responsivevoice.org">ResponsiveVoice-NonCommercial</a> licensed under <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/"><img title="ResponsiveVoice Text To Speech" src="https://responsivevoice.org/wp-content/uploads/2014/08/95x15.png" alt="95x15" width="95" height="15" /></div> -->
 <script
   src="https://code.jquery.com/jquery-3.4.1.min.js"
   integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
   crossorigin="anonymous"></script>
+<script src="https://code.responsivevoice.org/responsivevoice.js?key=EvJZLloN"></script>
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 <script src="scripts.js"></script>
 </body>
