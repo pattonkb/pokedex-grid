@@ -112,6 +112,7 @@
         align-items: center;
         background-color: #eee;
         padding: 2rem;
+        height: 10rem;
         @extend %screen-shadow-poke-grey;
     }
     // &__item--poke-instructions {

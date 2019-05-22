@@ -539,4 +539,378 @@ p {
   text-align: center;
 }
 
+.pokedex-wrapper__one {
+  grid-area: pokeWrapper1;
+  display: grid;
+  grid-template: auto 1fr auto/1fr;
+  grid-template-areas: "pokeAlerts" "pokeInset" "pokeInset";
+}
+
+.poke-inset {
+  grid-area: pokeInset;
+  display: grid;
+  grid-template: 1fr auto/1fr;
+  grid-template-areas: "pokeViewer" "pokeControls";
+}
+@media (min-width: 800px) {
+  .poke-inset {
+    margin: 1rem 0;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    box-shadow: inset 3px 7px 25px -5px #2e2222;
+  }
+}
+
+.pokedex-alerts {
+  grid-area: pokeAlerts;
+  display: grid;
+  grid-gap: 0 1rem;
+  grid-template-areas: "alert warn caution safe .";
+  align-items: start;
+  justify-content: start;
+}
+.pokedex-alerts--alert {
+  grid-area: alert;
+  border-radius: 50%;
+  border: 0.25rem solid #d8dbd0;
+  background-color: #44aacc;
+  height: 4rem;
+  width: 4rem;
+}
+.pokedex-alerts--alert.flashing {
+  animation: flash 1s linear infinite;
+}
+@keyframes flash {
+  0% {
+    background-color: #359ec2;
+  }
+  50% {
+    background-color: #246d86;
+  }
+  100% {
+    background-color: #359ec2;
+  }
+}
+.pokedex-alerts--warn {
+  grid-area: warn;
+  background-color: #931123;
+}
+.pokedex-alerts--caution {
+  grid-area: caution;
+  background-color: #f48333;
+}
+.pokedex-alerts--safe {
+  grid-area: safe;
+  background-color: #26441f;
+}
+
+.poke-viewer {
+  grid-area: pokeViewer;
+  display: grid;
+  grid-template: auto 2fr auto/repeat(2, auto);
+  grid-template-areas: "pokeVdots pokeVdots" "pokeImage pokeImage" "pokeSpeak pokeVent";
+  border-radius: 0.5rem;
+  border-color: transparent;
+  background: linear-gradient(45deg, transparent 20px, #d8dbd0 0) bottom left;
+  background-repeat: no-repeat;
+  padding: 1rem 2rem;
+  margin: 1rem 0;
+}
+.poke-viewer__item--dots {
+  grid-area: pokeVdots;
+  place-self: center;
+  font-size: 2rem;
+}
+.poke-viewer__item--poke-image-container {
+  grid-area: pokeImage;
+  border-radius: 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #eee;
+  padding: 2rem;
+  height: 10rem;
+}
+.poke-viewer__item--poke-image {
+  width: auto;
+  height: 10rem;
+}
+.poke-viewer__item--poke-speak {
+  grid-area: pokeSpeak;
+  place-self: center;
+  background-color: #ee2244;
+  height: 2rem;
+  width: 2rem;
+  border-radius: 50%;
+}
+.poke-viewer__item--poke-vent {
+  grid-area: pokeVent;
+  place-self: center;
+  font-size: 3rem;
+}
+
+.poke-controls {
+  gird-area: pokeControls;
+  display: grid;
+  grid-gap: 0.5rem 1rem;
+  grid-template: auto 1fr auto/1fr;
+  grid-template-areas: "pokeEnter pokeStartSelect pokeStartSelect" "pokeDots2 pokeDescShort pokeDirectionals" ". . pokeDots3";
+  padding: 0 1rem;
+  align-items: center;
+}
+.poke-controls__item--enter {
+  grid-area: pokeEnter;
+  height: 2.5rem;
+  width: 2.5rem;
+  background-color: #2e2222;
+  border: 1px solid #2e2222;
+  border-radius: 50%;
+}
+.poke-controls__item--start-select-container {
+  grid-area: pokeStartSelect;
+}
+.poke-controls__item--start, .poke-controls__item--select {
+  height: 1rem;
+  width: 4rem;
+  background-color: #d8dbd0;
+  border-radius: 0.5rem;
+}
+.poke-controls__item--dots {
+  grid-area: pokeDots2;
+  font-size: 2rem;
+  color: #2e2222;
+}
+.poke-controls__item--dots:last-of-type {
+  grid-area: pokeDots3;
+}
+.poke-controls__item--description-short {
+  grid-area: pokeDescShort;
+  color: #fff;
+  text-align: center;
+  padding: 1.75rem 1rem 0 1rem;
+  height: 80%;
+  width: 10rem;
+  border: 1px solid #2e2222;
+  border-radius: 0.5rem;
+  background-color: #26441f;
+}
+.poke-controls__item--directionals {
+  grid-area: pokeDirectionals;
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+  width: 5rem;
+  height: 5rem;
+}
+.poke-controls__item--directionals button, .poke-controls__item--directionals .filler {
+  border-color: transparent;
+  background-color: #2e2222;
+}
+.filler {
+  position: absolute;
+  width: 1.45rem;
+  height: 1.45rem;
+  top: 33.25%;
+  left: 40.75%;
+}
+
+.right {
+  width: 2rem;
+  height: 1.5rem;
+  position: absolute;
+  top: 33%;
+  left: 64%;
+  border-radius: 0 0.5rem 0.5rem 0;
+}
+
+.up {
+  width: 1.5rem;
+  height: 2rem;
+  position: absolute;
+  top: 0%;
+  left: 40%;
+  border-radius: 0.5rem 0.5rem 0 0;
+}
+
+.down {
+  width: 1.5rem;
+  height: 2rem;
+  position: absolute;
+  top: 57%;
+  left: 40%;
+  border-radius: 0 0 0.5rem 0.5rem;
+}
+
+.left {
+  width: 2rem;
+  height: 1.5rem;
+  position: absolute;
+  top: 33%;
+  right: 59%;
+  border-radius: 0.5rem 0 0 0.5rem;
+}
+
+.pokedex-hinge {
+  grid-area: pokeHinge;
+  display: grid;
+  grid-template: auto/repeat(2, 1fr);
+  background-color: #2e2222;
+  height: 1.15rem;
+  border: 1px solid #2e2222;
+  border-radius: 0.5rem;
+}
+.pokedex-hinge__item {
+  background-color: #ee2244;
+  border: 1px solid #2e2222;
+  border-radius: 0.5rem;
+}
+@media (min-width: 800px) {
+  .pokedex-hinge {
+    width: 1.15rem;
+    height: auto;
+    margin: 6.5rem 0 1.5rem;
+    grid-template: repeat(2, auto)/auto;
+  }
+}
+
+.pokedex-wrapper__two {
+  grid-area: pokeWrapper2;
+  display: grid;
+  grid-gap: 2rem 0;
+  grid-template: 0.75fr 1fr auto/1fr;
+  grid-template-areas: "generalInfo" "pokeButtons" "pokeType";
+}
+@media (min-width: 800px) {
+  .pokedex-wrapper__two {
+    margin: 6.5rem 0 1.5rem;
+  }
+}
+
+.poke__general-info {
+  grid-area: generalInfo;
+  padding: 1rem;
+  display: grid;
+  grid-template: repeat(3, auto)/repeat(2, auto);
+  grid-template-areas: "numberName numberName" "height weight" "description description";
+  justify-items: center;
+  border-radius: 0.5rem;
+  background-color: #2e2222;
+  color: #fff;
+}
+.poke__general-info--number-name {
+  grid-area: numberName;
+}
+.poke__general-info--height {
+  grid-area: height;
+}
+.poke__general-info--weight {
+  grid-area: weight;
+}
+.poke__general-info--poke-description {
+  grid-area: description;
+}
+
+.poke__buttons {
+  grid-area: pokeButtons;
+  display: grid;
+  grid-gap: 1rem 0;
+  grid-template-columns: repeat(3, auto);
+  grid-template-areas: "keyboard keyboard keyboard" "pokeDots4  . decorativeStartSelect" "decorativeAB decorativeAB pokeDecorativeCircle";
+}
+.poke__buttons--keyboard {
+  grid-area: keyboard;
+  display: grid;
+  grid-gap: 0;
+  justify-items: center;
+  grid-template: repeat(2, 1fr)/repeat(5, auto);
+  grid-template-areas: "a b c d e" "f g h i j";
+}
+.poke__buttons--keyboard-key.a {
+  grid-area: a;
+}
+.poke__buttons--keyboard-key.b {
+  grid-area: b;
+}
+.poke__buttons--keyboard-key.c {
+  grid-area: c;
+}
+.poke__buttons--keyboard-key.d {
+  grid-area: d;
+}
+.poke__buttons--keyboard-key.e {
+  grid-area: e;
+}
+.poke__buttons--keyboard-key.f {
+  grid-area: f;
+}
+.poke__buttons--keyboard-key.g {
+  grid-area: g;
+}
+.poke__buttons--keyboard-key.h {
+  grid-area: h;
+}
+.poke__buttons--keyboard-key.i {
+  grid-area: i;
+}
+.poke__buttons--keyboard-key.j {
+  grid-area: j;
+}
+.poke__buttons--keyboard-key {
+  grid-area: key;
+  width: 100%;
+  height: 4rem;
+  background-color: #44aacc;
+  border: 1px solid #d8dbd0;
+  border-radius: 0.5rem;
+}
+.poke__buttons--decorative-start-select {
+  grid-area: decorativeStartSelect;
+}
+.poke__buttons--decorative-start, .poke__buttons--decorative-select {
+  height: 1rem;
+  width: 4rem;
+  background-color: #d8dbd0;
+  border-radius: 0.5rem;
+}
+.poke__buttons--dots {
+  grid-area: pokeDots4;
+  font-size: 2rem;
+}
+.poke__buttons--decorative-a-b {
+  grid-area: decorativeAB;
+}
+.poke__buttons--decorative-a, .poke__buttons--decorative-b {
+  height: 4rem;
+  width: 4rem;
+  background-color: #d8dbd0;
+  border-radius: 0.5rem;
+}
+.poke__buttons--decorative-circle {
+  grid-area: pokeDecorativeCircle;
+  place-self: center;
+}
+.poke__buttons--decorative-circle-button {
+  place-self: right;
+  height: 4rem;
+  width: 4rem;
+  background-color: #f48333;
+  border: 1px solid #d8dbd0;
+  border-radius: 50%;
+}
+
+.poke__type {
+  grid-area: pokeType;
+  display: flex;
+  justify-content: space-between;
+  color: #fff;
+}
+.poke__type-1, .poke__type-2 {
+  background-color: #2e2222;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  width: 30%;
+  height: 1rem;
+  text-align: center;
+}
+
 /*# sourceMappingURL=main.css.map */
