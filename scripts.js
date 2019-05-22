@@ -88,26 +88,26 @@ getRandomizedPokemon.addEventListener("click", function() {
             speakButton.addEventListener("click", function(e) {
               setTimeout(function(){
                 var textToSpeak = document.querySelector(".poke__general-info").textContent;
-                responsiveVoice.speak(textToSpeak, "US English Male", {rate: 1.1});
-                // var utterThis = new SpeechSynthesisUtterance(textToSpeak);
-                // utterThis.pitch = 1.2;
-                // utterThis.rate = 1.1;
-                // utterThis.onstart = function(e) {
-                //   pokedexAlertsAlert.classList.add("flashing");
-                // }
-                // utterThis.onend = function(e) {
-                //   pokedexAlertsAlert.classList.remove("flashing");
-                // }
-                // synth.speak(utterThis);
-                setTimeout(function(){
-                  if(responsiveVoice.isPlaying()) {
-                    console.log("is playing");
-                      pokedexAlertsAlert.classList.add("flashing");
-                  } else {
-                    console.log("isn't playing");
-                      pokedexAlertsAlert.classList.remove("flashing");
-                  }
-                }, 100);
+                // responsiveVoice.speak(textToSpeak, "US English Male", {rate: 1.1});
+                var utterThis = new SpeechSynthesisUtterance(textToSpeak);
+                utterThis.pitch = 1.2;
+                utterThis.rate = 1.1;
+                utterThis.onstart = function(e) {
+                  pokedexAlertsAlert.classList.add("flashing");
+                }
+                utterThis.onend = function(e) {
+                  pokedexAlertsAlert.classList.remove("flashing");
+                }
+                synth.speak(utterThis);
+                // setTimeout(function(){
+                //   if(responsiveVoice.isPlaying()) {
+                //     console.log("is playing");
+                //       pokedexAlertsAlert.classList.add("flashing");
+                //   } else {
+                //     console.log("isn't playing");
+                //       pokedexAlertsAlert.classList.remove("flashing");
+                //   }
+                // }, 100);
               }, 100);
             });
       }
