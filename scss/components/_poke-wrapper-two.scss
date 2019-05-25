@@ -45,14 +45,15 @@
 .poke__buttons {
     grid-area: pokeButtons;
     display: grid;
-    grid-gap: 1rem 0;
-    grid-template-columns: repeat(3, auto);
-    // grid-template: 2fr auto 1fr / repeat(3, auto);
+    grid-gap: .5rem 0;
+    // grid-template-columns: repeat(3, auto);
+    grid-template: auto auto 1fr / auto auto 1fr;
     grid-template-areas:
         "keyboard keyboard keyboard"
-        "pokeDots4  . decorativeStartSelect"
+        "pokeDots4 decorativeStartSelect decorativeStartSelect"
         "decorativeAB decorativeAB pokeDecorativeCircle"
     ;
+    align-items: center;
     &--keyboard {
         grid-area: keyboard;
         display: grid;
@@ -86,6 +87,7 @@
     }
     &--decorative-start-select {
         grid-area: decorativeStartSelect;
+        place-self: center;
     }
 
     &--decorative-start,
