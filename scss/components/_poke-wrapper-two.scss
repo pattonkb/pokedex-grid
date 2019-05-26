@@ -51,7 +51,7 @@
     grid-template-areas:
         "keyboard keyboard keyboard"
         "pokeDots4 decorativeStartSelect decorativeStartSelect"
-        "decorativeAB decorativeAB pokeDecorativeCircle"
+        "imageFrontBack imageFrontBack pokeDecorativeCircle"
     ;
     align-items: center;
     &--keyboard {
@@ -104,14 +104,14 @@
         font-size: 2rem;
     }
 
-    &--decorative-a-b {
-        grid-area: decorativeAB;
+    &--image-front-back {
+        grid-area: imageFrontBack;
     }
 
-    &--decorative-a,
-    &--decorative-b {
+    &--image-front,
+    &--image-back {
         height: 4rem;
-        width: 4rem;
+        width: 5rem;
         background-color: $poke-grey;
         @extend %button-shadow-poke-grey;
         border-radius: $border-default;

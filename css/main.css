@@ -21,7 +21,7 @@
   box-shadow: -3px -3px 5px 0px darkgreen inset;
 }
 
-.poke__buttons--decorative-a, .poke__buttons--decorative-b, .poke__buttons--decorative-start, .poke__buttons--decorative-select, .poke__buttons--keyboard-key, .poke-controls__item--start, .poke-controls__item--select, .poke-viewer {
+.poke__buttons--image-front, .poke__buttons--image-back, .poke__buttons--decorative-start, .poke__buttons--decorative-select, .poke__buttons--keyboard-key, .poke-controls__item--start, .poke-controls__item--select, .poke-viewer {
   box-shadow: -3px -3px 5px 0px grey inset;
 }
 
@@ -141,7 +141,13 @@ a {
 }
 
 p {
+  font-family: "MyWebFont";
   font-size: 0.75rem;
+}
+
+button {
+  font-family: "MyWebFont";
+  font-size: 0.25rem;
 }
 
 .wrapper {
@@ -448,7 +454,7 @@ p {
   display: grid;
   grid-gap: 0.5rem 0;
   grid-template: auto auto 1fr/auto auto 1fr;
-  grid-template-areas: "keyboard keyboard keyboard" "pokeDots4 decorativeStartSelect decorativeStartSelect" "decorativeAB decorativeAB pokeDecorativeCircle";
+  grid-template-areas: "keyboard keyboard keyboard" "pokeDots4 decorativeStartSelect decorativeStartSelect" "imageFrontBack imageFrontBack pokeDecorativeCircle";
   align-items: center;
 }
 .poke__buttons--keyboard {
@@ -511,12 +517,12 @@ p {
   grid-area: pokeDots4;
   font-size: 2rem;
 }
-.poke__buttons--decorative-a-b {
-  grid-area: decorativeAB;
+.poke__buttons--image-front-back {
+  grid-area: imageFrontBack;
 }
-.poke__buttons--decorative-a, .poke__buttons--decorative-b {
+.poke__buttons--image-front, .poke__buttons--image-back {
   height: 4rem;
-  width: 4rem;
+  width: 5rem;
   background-color: #d8dbd0;
   border-radius: 0.5rem;
 }

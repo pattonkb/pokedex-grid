@@ -43,6 +43,8 @@ const pokeDescShort = document.querySelector(".poke-controls__item--description-
 const synth = window.speechSynthesis;
 const pokedexAlertsAlert = document.querySelector(".pokedex-alerts--alert");
 const speakButton = document.querySelector(".poke-viewer__item--poke-speak");
+const frontImageButton = document.querySelector(".poke__buttons--image-front");
+const backImageButton = document.querySelector(".poke__buttons--image-back");
 console.log(pokeImage);
 
 getRandomizedPokemon.addEventListener("click", function() {
@@ -51,7 +53,12 @@ getRandomizedPokemon.addEventListener("click", function() {
       if (pokeRequest.readyState === 4 && pokeRequest.status === 200) {
           const pokeResponse = JSON.parse(pokeRequest.responseText);
           console.log(pokeResponse);
+          for (let i = 0; i < pokeResponse; i ++) {
 
+          }
+
+          let pokeImageFront = pokeResponse.sprites.front_default;
+          let pokeImageBack = pokeResponse.sprites.back_default;
           let pokeName = capitalizeFirst(pokeResponse.name);
           let pokeNumber = pokeResponse.id;
           let pokeHeight = `${Math.ceil(pokeResponse.height/3.048)}'`;
@@ -63,28 +70,21 @@ getRandomizedPokemon.addEventListener("click", function() {
           let type1 = document.querySelector(".poke__type-1");
           let type2 = document.querySelector(".poke__type-2");
 
+          if (synth.speaking) {
+            synth.cancel();
+          }
+
           pokeViewer.innerHTML = `<img src="${pokeResponse.sprites.front_default}" class="poke-viewer__item--poke-image" style="display:block"/>`;
 
+          pokeDescShort.innerHTML = `<p>${pokeName}</p>`;
 
-          // function changePokeImage(button) {
-          //   button.addEventListener("click", function() {
-          //     // let pokeImageFront = ;
-          //     // let pokeImageBack = ;
-          //     if(pokeImage.src = pokeResponse.sprites.front_default) {
-          //       console.log(pokeImage.src);
-          //       pokeViewer.innerHTML = `<img src="${pokeResponse.sprites.back_default}" class="poke-viewer__item--poke-image" style="display:block"/>`;
-          //       console.log("back");
-          //     } else if(pokeImage.src = pokeResponse.sprites.back_default) {
-          //       console.log(pokeImage.src);
-          //       pokeViewer.innerHTML = `<img src="${pokeResponse.sprites.front_default}" class="poke-viewer__item--poke-image" style="display:block"/>`;
-          //       console.log("front");
-          //     }
-          //   });
-          // }
-          // changePokeImage(up);
-          // changePokeImage(right);
-          // changePokeImage(down);
-          // changePokeImage(left);
+          function changePokeImage(imageButton, imageToDisplay) {
+            imageButton.addEventListener("click", function() {
+                pokeViewer.innerHTML = `<img src="${imageToDisplay}" class="poke-viewer__item--poke-image" style="display:block"/>`;
+            });
+          }
+          changePokeImage(frontImageButton, pokeImageFront);
+          changePokeImage(backImageButton, pokeImageBack);
 
 
           function getType2() {
@@ -94,7 +94,7 @@ getRandomizedPokemon.addEventListener("click", function() {
               pokeType2 = "Null"
           }
           getType2();
-          pokeDescShort.innerHTML = `<p>${pokeName}</p>`;
+
 
           let genInfoHTML =
               `<div class="poke__general-info--number-name">
@@ -116,6 +116,17 @@ getRandomizedPokemon.addEventListener("click", function() {
             type1.textContent =  pokeType1;
             type2.textContent = pokeType2;
 
+            // up.addEventListener("click", function() {
+            //   const pokeRequest2 = new XMLHttpRequest();
+            //   pokeRequest2.onreadystatechange = function () {
+            //       if (pokeRequest2.readyState === 4 && pokeRequest2.status === 200) {
+            //           const pokeResponse2 = JSON.parse(pokeRequest2.responseText);
+            //           console.log(pokeResponse2);
+            //       }
+            //     };
+            //     pokeRequest2.open("GET","http://pokeapi.co/api/v2/pokemon/" + pokeResponse.id + 1);
+            //     pokeRequest2.send();
+            //   });
       }
       else {
         console.log("loading");
