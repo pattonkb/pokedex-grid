@@ -29,14 +29,21 @@ function capitalizeFirst(word) {
   return capitalizedWord;
 }
 
+const up = document.querySelector(".up");
+const right = document.querySelector(".right");
+const down = document.querySelector(".down");
+const left = document.querySelector(".left");
+
 const pokeGenInfo = document.querySelector(".poke__general-info");
 const pokeViewer = document.querySelector(".poke-viewer__item--poke-image-container");
+const pokeInstructions = document.querySelector(".poke-viewer__item--poke-instructions");
 const pokeImage = document.querySelector(".poke-viewer__item--poke-image");
 const getRandomizedPokemon = document.querySelector(".poke-controls__item--enter");
 const pokeDescShort = document.querySelector(".poke-controls__item--description-short");
 const synth = window.speechSynthesis;
 const pokedexAlertsAlert = document.querySelector(".pokedex-alerts--alert");
 const speakButton = document.querySelector(".poke-viewer__item--poke-speak");
+console.log(pokeImage);
 
 getRandomizedPokemon.addEventListener("click", function() {
   const pokeRequest = new XMLHttpRequest();
@@ -44,8 +51,7 @@ getRandomizedPokemon.addEventListener("click", function() {
       if (pokeRequest.readyState === 4 && pokeRequest.status === 200) {
           const pokeResponse = JSON.parse(pokeRequest.responseText);
           console.log(pokeResponse);
-          pokeViewer.innerHTML = `<img src="${pokeResponse.sprites.front_default}" class="poke-viewer__item--poke-image"/>`;
-          // pokeImage.src = pokeResponse.sprites.front_default;
+
           let pokeName = capitalizeFirst(pokeResponse.name);
           let pokeNumber = pokeResponse.id;
           let pokeHeight = `${Math.ceil(pokeResponse.height/3.048)}'`;
@@ -56,6 +62,30 @@ getRandomizedPokemon.addEventListener("click", function() {
           let pokeType2 = "";
           let type1 = document.querySelector(".poke__type-1");
           let type2 = document.querySelector(".poke__type-2");
+
+          pokeViewer.innerHTML = `<img src="${pokeResponse.sprites.front_default}" class="poke-viewer__item--poke-image" style="display:block"/>`;
+
+
+          // function changePokeImage(button) {
+          //   button.addEventListener("click", function() {
+          //     // let pokeImageFront = ;
+          //     // let pokeImageBack = ;
+          //     if(pokeImage.src = pokeResponse.sprites.front_default) {
+          //       console.log(pokeImage.src);
+          //       pokeViewer.innerHTML = `<img src="${pokeResponse.sprites.back_default}" class="poke-viewer__item--poke-image" style="display:block"/>`;
+          //       console.log("back");
+          //     } else if(pokeImage.src = pokeResponse.sprites.back_default) {
+          //       console.log(pokeImage.src);
+          //       pokeViewer.innerHTML = `<img src="${pokeResponse.sprites.front_default}" class="poke-viewer__item--poke-image" style="display:block"/>`;
+          //       console.log("front");
+          //     }
+          //   });
+          // }
+          // changePokeImage(up);
+          // changePokeImage(right);
+          // changePokeImage(down);
+          // changePokeImage(left);
+
 
           function getType2() {
             pokeResponse.types.length > 1 ?
@@ -85,31 +115,7 @@ getRandomizedPokemon.addEventListener("click", function() {
             pokeGenInfo.innerHTML = genInfoHTML;
             type1.textContent =  pokeType1;
             type2.textContent = pokeType2;
-            speakButton.addEventListener("click", function(e) {
-              setTimeout(function(){
-                var textToSpeak = document.querySelector(".poke__general-info").textContent;
-                // responsiveVoice.speak(textToSpeak, "US English Male", {rate: 1.1});
-                var utterThis = new SpeechSynthesisUtterance(textToSpeak);
-                utterThis.pitch = 1.2;
-                utterThis.rate = 1.1;
-                utterThis.onstart = function(e) {
-                  pokedexAlertsAlert.classList.add("flashing");
-                }
-                utterThis.onend = function(e) {
-                  pokedexAlertsAlert.classList.remove("flashing");
-                }
-                synth.speak(utterThis);
-                // setTimeout(function(){
-                //   if(responsiveVoice.isPlaying()) {
-                //     console.log("is playing");
-                //       pokedexAlertsAlert.classList.add("flashing");
-                //   } else {
-                //     console.log("isn't playing");
-                //       pokedexAlertsAlert.classList.remove("flashing");
-                //   }
-                // }, 100);
-              }, 100);
-            });
+
       }
       else {
         console.log("loading");
@@ -120,19 +126,51 @@ getRandomizedPokemon.addEventListener("click", function() {
   pokeRequest.send();
 });
 
+speakButton.addEventListener("click", function(e) {
+  setTimeout(function(){
+    var textToSpeak = document.querySelector(".poke__general-info").textContent;
+    var utterThis = new SpeechSynthesisUtterance(textToSpeak);
+    utterThis.pitch = 1.2;
+    utterThis.rate = 1.1;
+    utterThis.onstart = function(e) {
+      pokedexAlertsAlert.classList.add("flashing");
+    }
+    utterThis.onend = function(e) {
+      pokedexAlertsAlert.classList.remove("flashing");
+    }
+    synth.speak(utterThis);
+  }, 100);
+
+});
+
+window.addEventListener('beforeunload', function(e) {
+  synth.cancel();
+});
+
+
+
 // speakButton.addEventListener("click", function(e) {
 //   setTimeout(function(){
 //     var textToSpeak = document.querySelector(".poke__general-info").textContent;
-//     var utterThis = new SpeechSynthesisUtterance(textToSpeak);
-//     utterThis.pitch = 1.2;
-//     utterThis.rate = 1.1;
-//     utterThis.onstart = function(e) {
-//       pokedexAlertsAlert.classList.add("flashing");
-//     }
-//     utterThis.onend = function(e) {
-//       pokedexAlertsAlert.classList.remove("flashing");
-//     }
-//     synth.speak(utterThis);
+//     // responsiveVoice.speak(textToSpeak, "US English Male", {rate: 1.1});
+//     // var utterThis = new SpeechSynthesisUtterance(textToSpeak);
+//     // utterThis.pitch = 1.2;
+//     // utterThis.rate = 1.1;
+//     // utterThis.onstart = function(e) {
+//     //   pokedexAlertsAlert.classList.add("flashing");
+//     // }
+//     // utterThis.onend = function(e) {
+//     //   pokedexAlertsAlert.classList.remove("flashing");
+//     // }
+//     // synth.speak(utterThis);
+//     setTimeout(function(){
+//       if(responsiveVoice.isPlaying()) {
+//         console.log("is playing");
+//           pokedexAlertsAlert.classList.add("flashing");
+//       } else {
+//         console.log("isn't playing");
+//           pokedexAlertsAlert.classList.remove("flashing");
+//       }
+//     }, 100);
 //   }, 100);
-//
 // });
