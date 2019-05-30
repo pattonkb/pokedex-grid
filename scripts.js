@@ -34,6 +34,9 @@ const right = document.querySelector(".right");
 const down = document.querySelector(".down");
 const left = document.querySelector(".left");
 
+const pokeWarn = document.querySelector(".pokedex-alerts--warn");
+const pokeCaution = document.querySelector(".pokedex-alerts--caution");
+const pokeSafe = document.querySelector(".pokedex-alerts--safe");
 const pokeGenInfo = document.querySelector(".poke__general-info");
 const pokeViewer = document.querySelector(".poke-viewer__item--poke-image-container");
 const pokeInstructions = document.querySelector(".poke-viewer__item--poke-instructions");
@@ -53,9 +56,9 @@ getRandomizedPokemon.addEventListener("click", function() {
       if (pokeRequest.readyState === 4 && pokeRequest.status === 200) {
           const pokeResponse = JSON.parse(pokeRequest.responseText);
           console.log(pokeResponse);
-          for (let i = 0; i < pokeResponse; i ++) {
-
-          }
+          // for (let i = 0; i < pokeResponse; i ++) {
+          //
+          // }
 
           let pokeImageFront = pokeResponse.sprites.front_default;
           let pokeImageBack = pokeResponse.sprites.back_default;
@@ -95,6 +98,14 @@ getRandomizedPokemon.addEventListener("click", function() {
           }
           getType2();
 
+          if(pokeResponse.base_experience > 200) {
+            pokeWarn.classList.add("warning");
+          }
+          // else if () {
+          //
+          // } else if () {
+          //
+          // }
 
           let genInfoHTML =
               `<div class="poke__general-info--number-name">
@@ -144,10 +155,10 @@ speakButton.addEventListener("click", function(e) {
     utterThis.pitch = 1.2;
     utterThis.rate = 1.1;
     utterThis.onstart = function(e) {
-      pokedexAlertsAlert.classList.add("flashing");
+      pokedexAlertsAlert.classList.add("speaking");
     }
     utterThis.onend = function(e) {
-      pokedexAlertsAlert.classList.remove("flashing");
+      pokedexAlertsAlert.classList.remove("speaking");
     }
     synth.speak(utterThis);
   }, 100);

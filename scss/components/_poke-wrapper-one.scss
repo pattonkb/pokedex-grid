@@ -42,7 +42,7 @@
         height: 4rem;
         width: 4rem;
         @extend %button-shadow-poke-blue;
-        &.flashing {
+        &.speaking {
           animation: flash 1s linear infinite;
           @keyframes flash {
             0% {
@@ -62,6 +62,20 @@
         @extend %alert-styles;
         background-color: $poke-red;
         @extend %button-shadow-pokedex-red;
+        &.warning {
+          animation: warn 1s linear infinite;
+          @keyframes warn {
+            0% {
+              background-color: $poke-warn-red;
+            }
+            50% {
+              background-color: $poke-red;
+            }
+            100% {
+              background-color: $poke-warn-red;
+            }
+          }
+        }
     }
     &--caution {
         grid-area: caution;

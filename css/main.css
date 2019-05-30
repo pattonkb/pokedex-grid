@@ -212,7 +212,7 @@ button {
   height: 4rem;
   width: 4rem;
 }
-.pokedex-alerts--alert.flashing {
+.pokedex-alerts--alert.speaking {
   animation: flash 1s linear infinite;
 }
 @keyframes flash {
@@ -229,6 +229,20 @@ button {
 .pokedex-alerts--warn {
   grid-area: warn;
   background-color: #931123;
+}
+.pokedex-alerts--warn.warning {
+  animation: warn 1s linear infinite;
+}
+@keyframes warn {
+  0% {
+    background-color: #d81933;
+  }
+  50% {
+    background-color: #931123;
+  }
+  100% {
+    background-color: #d81933;
+  }
 }
 .pokedex-alerts--caution {
   grid-area: caution;

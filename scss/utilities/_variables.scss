@@ -17,8 +17,12 @@ $poke-grey: $nintendo-brick-grey;
 $poke-blue: $neon-blue;
 $poke-blue-darkened: $dark-neon-blue;
 $poke-yellow: $warm-yellow;
+$poke-caution-yellow: lighten($warm-yellow, 15);
 $poke-green: $forrest-green;
+$poke-safe-green: lighten($poke-green, 15);
 $poke-red: $warm-red;
+$poke-warn-red: lighten($warm-red, 15);
+
 
 
 // Text
