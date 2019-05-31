@@ -82,12 +82,40 @@
         @extend %alert-styles;
         background-color: $poke-yellow;
         @extend %button-shadow-poke-orange;
+        &.cautioning {
+          animation: caution 1s linear infinite;
+          @keyframes caution {
+            0% {
+              background-color: $poke-caution-yellow;
+            }
+            50% {
+              background-color: $poke-yellow;
+            }
+            100% {
+              background-color: $poke-caution-yellow;
+            }
+          }
+        }
     }
     &--safe {
         grid-area: safe;
         @extend %alert-styles;
         background-color: $poke-green;
         @extend %button-shadow-poke-green;
+        &.is-safe {
+          animation: safe 1s linear infinite;
+          @keyframes safe {
+            0% {
+              background-color: $poke-safe-green;
+            }
+            50% {
+              background-color: $poke-green;
+            }
+            100% {
+              background-color: $poke-safe-green;
+            }
+          }
+        }
     }
 }
 

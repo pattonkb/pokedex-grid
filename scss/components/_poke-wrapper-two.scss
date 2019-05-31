@@ -9,7 +9,7 @@
         "pokeType"
     ;
     @include media("medium") {
-        margin: 6.5rem 0 1.5rem;
+        margin: 6.5rem 2.5rem 1.5rem 0;
     }
 }
 
@@ -46,8 +46,7 @@
     grid-area: pokeButtons;
     display: grid;
     grid-gap: .5rem 0;
-    // grid-template-columns: repeat(3, auto);
-    grid-template: auto auto 1fr / auto auto 1fr;
+    grid-template: repeat(2, auto) 1fr / repeat(3, auto);
     grid-template-areas:
         "keyboard keyboard keyboard"
         "pokeDots4 decorativeStartSelect decorativeStartSelect"

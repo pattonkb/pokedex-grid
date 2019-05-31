@@ -248,9 +248,37 @@ button {
   grid-area: caution;
   background-color: #f48333;
 }
+.pokedex-alerts--caution.cautioning {
+  animation: caution 1s linear infinite;
+}
+@keyframes caution {
+  0% {
+    background-color: #f8af7c;
+  }
+  50% {
+    background-color: #f48333;
+  }
+  100% {
+    background-color: #f8af7c;
+  }
+}
 .pokedex-alerts--safe {
   grid-area: safe;
   background-color: #26441f;
+}
+.pokedex-alerts--safe.is-safe {
+  animation: safe 1s linear infinite;
+}
+@keyframes safe {
+  0% {
+    background-color: #437937;
+  }
+  50% {
+    background-color: #26441f;
+  }
+  100% {
+    background-color: #437937;
+  }
 }
 
 .poke-viewer {
@@ -435,7 +463,7 @@ button {
 }
 @media (min-width: 800px) {
   .pokedex-wrapper__two {
-    margin: 6.5rem 0 1.5rem;
+    margin: 6.5rem 2.5rem 1.5rem 0;
   }
 }
 
@@ -467,7 +495,7 @@ button {
   grid-area: pokeButtons;
   display: grid;
   grid-gap: 0.5rem 0;
-  grid-template: auto auto 1fr/auto auto 1fr;
+  grid-template: repeat(2, auto) 1fr/repeat(3, auto);
   grid-template-areas: "keyboard keyboard keyboard" "pokeDots4 decorativeStartSelect decorativeStartSelect" "imageFrontBack imageFrontBack pokeDecorativeCircle";
   align-items: center;
 }

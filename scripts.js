@@ -94,18 +94,21 @@ getRandomizedPokemon.addEventListener("click", function() {
             pokeResponse.types.length > 1 ?
               pokeType2 = capitalizeFirst(pokeResponse.types[1].type.name)
               :
-              pokeType2 = "Null"
+              pokeType2 = "N/A"
           }
           getType2();
 
-          if(pokeResponse.base_experience > 200) {
+          if (pokeResponse.base_experience > 200) {
             pokeWarn.classList.add("warning");
+          } else if (pokeResponse.base_experience < 200) {
+            pokeCaution.classList.add("cautioning");
+          } else if (pokeResponse.base_experience < 90) {
+            pokeSafe.classList.add("is-safe");
+          } else {
+            pokeWarn.classList.remove("warning");
+            pokeWarn.classList.remove("cautioning");
+            pokeWarn.classList.remove("is-safe");
           }
-          // else if () {
-          //
-          // } else if () {
-          //
-          // }
 
           let genInfoHTML =
               `<div class="poke__general-info--number-name">
