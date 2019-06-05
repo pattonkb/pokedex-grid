@@ -94,20 +94,25 @@ getRandomizedPokemon.addEventListener("click", function() {
             pokeResponse.types.length > 1 ?
               pokeType2 = capitalizeFirst(pokeResponse.types[1].type.name)
               :
-              pokeType2 = "N/A"
+                pokeType2 = "N/A"
           }
           getType2();
 
-          if (pokeResponse.base_experience > 200) {
+          if (pokeResponse.base_experience > 150) {
+            console.log(pokeResponse.base_experience);
             pokeWarn.classList.add("warning");
-          } else if (pokeResponse.base_experience < 200) {
+            pokeCaution.classList.remove("cautioning");
+            pokeSafe.classList.remove("is-safe");
+          } else if (pokeResponse.base_experience < 149 && pokeResponse.base_experience > 90) {
+            console.log(pokeResponse.base_experience);
             pokeCaution.classList.add("cautioning");
-          } else if (pokeResponse.base_experience < 90) {
-            pokeSafe.classList.add("is-safe");
-          } else {
             pokeWarn.classList.remove("warning");
-            pokeWarn.classList.remove("cautioning");
-            pokeWarn.classList.remove("is-safe");
+            pokeSafe.classList.remove("is-safe");
+          } else if (pokeResponse.base_experience < 89) {
+            console.log(pokeResponse.base_experience);
+            pokeSafe.classList.add("is-safe");
+            pokeWarn.classList.remove("warning");
+            pokeCaution.classList.remove("cautioning");
           }
 
           let genInfoHTML =

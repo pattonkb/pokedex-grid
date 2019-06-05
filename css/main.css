@@ -26,7 +26,7 @@
 }
 
 .poke-controls__item--directionals button, .poke-controls__item--directionals .filler, .poke-controls__item--enter {
-  box-shadow: -3px -3px 5px 0px black inset;
+  box-shadow: -3px -3px 5px 0px #2e2222 inset;
 }
 
 .pokedex-alerts--alert {
@@ -38,7 +38,7 @@
 }
 
 .poke__type-1, .poke__type-2, .poke__general-info {
-  box-shadow: 0px 0px 5px 3px black inset;
+  box-shadow: 0px 0px 5px 3px #2e2222 inset;
 }
 
 .poke-controls__item--description-short {
@@ -228,7 +228,7 @@ button {
 }
 .pokedex-alerts--warn {
   grid-area: warn;
-  background-color: #931123;
+  background-color: #38060d;
 }
 .pokedex-alerts--warn.warning {
   animation: warn 1s linear infinite;
@@ -236,17 +236,20 @@ button {
 @keyframes warn {
   0% {
     background-color: #d81933;
+    box-shadow: 0px 0px 11px 1px #2e2222;
   }
   50% {
-    background-color: #931123;
+    background-color: #38060d;
+    box-shadow: none;
   }
   100% {
     background-color: #d81933;
+    box-shadow: 0px 0px 11px 1px #2e2222;
   }
 }
 .pokedex-alerts--caution {
   grid-area: caution;
-  background-color: #f48333;
+  background-color: #b7520a;
 }
 .pokedex-alerts--caution.cautioning {
   animation: caution 1s linear infinite;
@@ -254,17 +257,19 @@ button {
 @keyframes caution {
   0% {
     background-color: #f8af7c;
+    box-shadow: 0px 0px 11px 1px #2e2222;
   }
   50% {
-    background-color: #f48333;
+    background-color: #b7520a;
   }
   100% {
     background-color: #f8af7c;
+    box-shadow: 0px 0px 11px 1px #2e2222;
   }
 }
 .pokedex-alerts--safe {
   grid-area: safe;
-  background-color: #26441f;
+  background-color: black;
 }
 .pokedex-alerts--safe.is-safe {
   animation: safe 1s linear infinite;
@@ -272,12 +277,14 @@ button {
 @keyframes safe {
   0% {
     background-color: #437937;
+    box-shadow: 0px 0px 11px 1px #2e2222;
   }
   50% {
-    background-color: #26441f;
+    background-color: black;
   }
   100% {
     background-color: #437937;
+    box-shadow: 0px 0px 11px 1px #2e2222;
   }
 }
 

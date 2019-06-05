@@ -60,19 +60,22 @@
     &--warn {
         grid-area: warn;
         @extend %alert-styles;
-        background-color: $poke-red;
+        background-color: darken($poke-red, 20);
         @extend %button-shadow-pokedex-red;
         &.warning {
           animation: warn 1s linear infinite;
           @keyframes warn {
             0% {
               background-color: $poke-warn-red;
+              box-shadow: 0px 0px 11px 1px $poke-black;
             }
             50% {
-              background-color: $poke-red;
+              background-color: darken($poke-red, 20);
+              box-shadow: none;
             }
             100% {
               background-color: $poke-warn-red;
+              box-shadow: 0px 0px 11px 1px $poke-black;
             }
           }
         }
@@ -80,19 +83,21 @@
     &--caution {
         grid-area: caution;
         @extend %alert-styles;
-        background-color: $poke-yellow;
+        background-color: darken($poke-yellow, 20);
         @extend %button-shadow-poke-orange;
         &.cautioning {
           animation: caution 1s linear infinite;
           @keyframes caution {
             0% {
               background-color: $poke-caution-yellow;
+              box-shadow: 0px 0px 11px 1px $poke-black;
             }
             50% {
-              background-color: $poke-yellow;
+              background-color: darken($poke-yellow, 20);
             }
             100% {
               background-color: $poke-caution-yellow;
+              box-shadow: 0px 0px 11px 1px $poke-black;
             }
           }
         }
@@ -100,19 +105,21 @@
     &--safe {
         grid-area: safe;
         @extend %alert-styles;
-        background-color: $poke-green;
+        background-color: darken($poke-green, 20);
         @extend %button-shadow-poke-green;
         &.is-safe {
           animation: safe 1s linear infinite;
           @keyframes safe {
             0% {
               background-color: $poke-safe-green;
+              box-shadow: 0px 0px 11px 1px $poke-black;
             }
             50% {
-              background-color: $poke-green;
+              background-color: darken($poke-green, 20);
             }
             100% {
               background-color: $poke-safe-green;
+              box-shadow: 0px 0px 11px 1px $poke-black;
             }
           }
         }
