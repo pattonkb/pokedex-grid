@@ -60,7 +60,7 @@
     &--warn {
         grid-area: warn;
         @extend %alert-styles;
-        background-color: darken($poke-red, 20);
+        background-color: $poke-red;
         @extend %button-shadow-pokedex-red;
         &.warning {
           animation: warn 1s linear infinite;
@@ -70,8 +70,9 @@
               box-shadow: 0px 0px 11px 1px $poke-black;
             }
             50% {
-              background-color: darken($poke-red, 20);
+              background-color: $poke-red;
               box-shadow: none;
+              @extend %button-shadow-pokedex-red;
             }
             100% {
               background-color: $poke-warn-red;
@@ -83,7 +84,7 @@
     &--caution {
         grid-area: caution;
         @extend %alert-styles;
-        background-color: darken($poke-yellow, 20);
+        background-color: $poke-yellow;
         @extend %button-shadow-poke-orange;
         &.cautioning {
           animation: caution 1s linear infinite;
@@ -93,7 +94,9 @@
               box-shadow: 0px 0px 11px 1px $poke-black;
             }
             50% {
-              background-color: darken($poke-yellow, 20);
+              background-color: $poke-yellow;
+              box-shadow: none;
+              @extend %button-shadow-poke-orange;
             }
             100% {
               background-color: $poke-caution-yellow;
@@ -105,7 +108,7 @@
     &--safe {
         grid-area: safe;
         @extend %alert-styles;
-        background-color: darken($poke-green, 20);
+        background-color: $poke-green;
         @extend %button-shadow-poke-green;
         &.is-safe {
           animation: safe 1s linear infinite;
@@ -115,7 +118,9 @@
               box-shadow: 0px 0px 11px 1px $poke-black;
             }
             50% {
-              background-color: darken($poke-green, 20);
+              background-color: $poke-green;
+              box-shadow: none;
+              @extend %button-shadow-poke-green;
             }
             100% {
               background-color: $poke-safe-green;

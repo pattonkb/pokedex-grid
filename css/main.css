@@ -9,16 +9,16 @@
   box-shadow: -3px -3px 5px 0px #931123 inset;
 }
 
-.pokedex-alerts--warn {
-  box-shadow: -3px -3px 5px 0px #ee2244 inset;
+.pokedex-alerts--warn.warning, .pokedex-alerts--warn {
+  box-shadow: -3px -3px 5px 0px #38060d inset;
 }
 
-.poke__buttons--decorative-circle-button, .pokedex-alerts--caution {
-  box-shadow: -3px -3px 5px 0px orange inset;
+.poke__buttons--decorative-circle-button, .pokedex-alerts--caution.cautioning, .pokedex-alerts--caution {
+  box-shadow: -3px -3px 5px 0px #873c07 inset;
 }
 
-.pokedex-alerts--safe {
-  box-shadow: -3px -3px 5px 0px darkgreen inset;
+.pokedex-alerts--safe.is-safe, .pokedex-alerts--safe {
+  box-shadow: -3px -3px 5px 0px black inset;
 }
 
 .poke__buttons--image-front, .poke__buttons--image-back, .poke__buttons--decorative-start, .poke__buttons--decorative-select, .poke__buttons--keyboard-key, .poke-controls__item--start, .poke-controls__item--select, .poke-viewer {
@@ -228,7 +228,7 @@ button {
 }
 .pokedex-alerts--warn {
   grid-area: warn;
-  background-color: #38060d;
+  background-color: #931123;
 }
 .pokedex-alerts--warn.warning {
   animation: warn 1s linear infinite;
@@ -239,7 +239,7 @@ button {
     box-shadow: 0px 0px 11px 1px #2e2222;
   }
   50% {
-    background-color: #38060d;
+    background-color: #931123;
     box-shadow: none;
   }
   100% {
@@ -249,7 +249,7 @@ button {
 }
 .pokedex-alerts--caution {
   grid-area: caution;
-  background-color: #b7520a;
+  background-color: #f48333;
 }
 .pokedex-alerts--caution.cautioning {
   animation: caution 1s linear infinite;
@@ -260,7 +260,8 @@ button {
     box-shadow: 0px 0px 11px 1px #2e2222;
   }
   50% {
-    background-color: #b7520a;
+    background-color: #f48333;
+    box-shadow: none;
   }
   100% {
     background-color: #f8af7c;
@@ -269,7 +270,7 @@ button {
 }
 .pokedex-alerts--safe {
   grid-area: safe;
-  background-color: black;
+  background-color: #26441f;
 }
 .pokedex-alerts--safe.is-safe {
   animation: safe 1s linear infinite;
@@ -280,7 +281,8 @@ button {
     box-shadow: 0px 0px 11px 1px #2e2222;
   }
   50% {
-    background-color: black;
+    background-color: #26441f;
+    box-shadow: none;
   }
   100% {
     background-color: #437937;

@@ -10,15 +10,15 @@
 }
 
 %button-shadow-pokedex-red {
-    box-shadow: -3px -3px 5px 0px $pokedex-red inset;
+    box-shadow: -3px -3px 5px 0px darken($poke-red, 20) inset;
 }
 
 %button-shadow-poke-orange {
-    box-shadow: -3px -3px 5px 0px orange inset;
+    box-shadow: -3px -3px 5px 0px darken($poke-yellow, 30) inset;
 }
 
 %button-shadow-poke-green {
-    box-shadow: -3px -3px 5px 0px darkgreen inset;
+    box-shadow: -3px -3px 5px 0px darken($poke-green, 20) inset;
 }
 
 %button-shadow-poke-grey {
