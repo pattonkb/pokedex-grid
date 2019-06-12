@@ -64,8 +64,8 @@ getRandomizedPokemon.addEventListener("click", function() {
           let pokeImageBack = pokeResponse.sprites.back_default;
           let pokeName = capitalizeFirst(pokeResponse.name);
           let pokeNumber = pokeResponse.id;
-          let pokeHeight = `${Math.ceil(pokeResponse.height/3.048)}'`;
-          let pokeWeight = `${Math.ceil(pokeResponse.weight/4.5359237)} lbs.`;
+          let pokeHeight = Math.ceil(pokeResponse.height/3.048);
+          let pokeWeight = Math.ceil(pokeResponse.weight/4.5359237);
           let attack1 = pokeResponse.moves[0].move.name;
           let attack2 = pokeResponse.moves[1].move.name;
           let pokeType1 = capitalizeFirst(pokeResponse.types[0].type.name);
@@ -117,15 +117,15 @@ getRandomizedPokemon.addEventListener("click", function() {
 
           let genInfoHTML =
               `<div class="poke__general-info--number-name">
-                    <p><img src="http://www.pokeapi-how.appspot.com/favicon.ico" class="poke-ball"/> # ${pokeNumber} ${pokeName}</p>
+                    <p><img src="http://www.pokeapi-how.appspot.com/favicon.ico" class="poke-ball"/> No. ${pokeNumber} ${pokeName}</p>
                 </div>
                 <div class="poke__general-info--height">
                     <p>Height:</p>
-                    <p>${pokeHeight}</p>
+                    <p>${pokeHeight}'</p>
                 </div>
                 <div class="poke__general-info--weight">
                     <p>Weight:</p>
-                    <p>${pokeWeight}</p>
+                    <p>${pokeWeight}lbs.</p>
                 </div>
                 <div class="poke__general-info--poke-description">
                     <p>${pokeName} is a ${pokeType1} type Pok&eacute;mon. A few of it's attacks are ${attack1} and ${attack2}.</p>

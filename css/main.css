@@ -490,9 +490,11 @@ button {
 }
 .poke__general-info--height {
   grid-area: height;
+  text-align: center;
 }
 .poke__general-info--weight {
   grid-area: weight;
+  text-align: center;
 }
 .poke__general-info--poke-description {
   grid-area: description;

@@ -33,9 +33,11 @@
     }
     &--height {
         grid-area: height;
+        text-align: center;
     }
     &--weight {
         grid-area: weight;
+        text-align: center;
     }
     &--poke-description {
         grid-area: description;
