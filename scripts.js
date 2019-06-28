@@ -175,6 +175,9 @@ speakButton.addEventListener("click", function(e) {
 
 window.addEventListener('beforeunload', function(e) {
   synth.cancel();
+  pokeCaution.classList.remove("cautioning");
+  pokeSafe.classList.remove("is-safe");
+  pokeWarn.classList.remove("warning");
 });
 
 
