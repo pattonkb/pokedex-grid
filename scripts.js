@@ -128,7 +128,7 @@ getRandomizedPokemon.addEventListener("click", function() {
                     <p>${pokeWeight}lbs.</p>
                 </div>
                 <div class="poke__general-info--poke-description">
-                    <p>${pokeName} is a ${pokeType1} type Pok&eacute;mon. A few of it's attacks are ${attack1} and ${attack2}.</p>
+                    <p>${pokeName} is a ${pokeType1} type Pok&eacute;mon. A few of its attacks are ${attack1} and ${attack2}.</p>
                 </div>`
             ;
             pokeGenInfo.innerHTML = genInfoHTML;
